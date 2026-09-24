@@ -171,7 +171,7 @@ MyDoor = BaseDoor.Inherit("MyDoor")
 MyDoor.DEFAULT_SCALE = Vector(1, 2, 1)
 
 function MyDoor:Constructor(location, rotation, door_asset, door_scale)
-    self.Super:Constructor(location, rotation, door_asset or BaseDoor.DEFAULT_MESH_ASSET)
+    BaseDoor.Constructor(self, location, rotation, door_asset or BaseDoor.DEFAULT_MESH_ASSET)
     self:SetScale(door_scale or MyDoor.DEFAULT_SCALE)
 end
 

@@ -1,11 +1,11 @@
 # vault configurations
 [meta]
     # friendly name
-    title =                 "Nanos Door"
+    title =                 "Nanos Door TEST"
     # contributors
     author =                "TheMaxee"
     # version
-    version =               "0.1.1"
+    version =               "0.1.0"
 
 # script configurations
 [script]
@@ -19,7 +19,7 @@
     compatibility_version = "1.156"
     # packages requirements
     packages_requirements = [
-
+                            "door",
     ]
     # asset packs requirements
     assets_requirements = [

@@ -5,8 +5,8 @@
 .claude-flow/data/
 .claude-flow/logs/
 .claude-flow/sessions/
-.agents/*
-.claude/*
+.agents/
+.claude/
 .claude-flow/
 .swarm/
 .mcp.json
