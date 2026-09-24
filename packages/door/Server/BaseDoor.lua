@@ -13,7 +13,7 @@ BaseDoor.DEFAULT_MESH_ASSET = "nanos-world::SM_Plane"
 function BaseDoor:Constructor(location, rotation, mesh_asset, trigger_extent)
     self.Super:Constructor(location, rotation, mesh_asset)
 
-    self.trigger = Trigger(location, Rotator(), trigger_extent or 150, TriggerType.Sphere, false, Color.RED, { "Character" })
+    self.trigger = Trigger(location, Rotator(), trigger_extent or 150, TriggerType.Sphere, false, Color.RED, { "Character", "CharacterSimple" })
     self.state = DoorEvents.STATE.CLOSED
     self.locked = false
 
