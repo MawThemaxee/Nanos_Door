@@ -1,0 +1,15 @@
+# Ruflo local secrets and runtime data
+.env
+.env.local
+.env.*.local
+.claude-flow/data/
+.claude-flow/logs/
+.claude-flow/sessions/
+.agents/*
+.claude/*
+.claude-flow/
+.swarm/
+.mcp.json
+CLAUDE.md
+Nanos_Door.code-workspace
+Docs/
