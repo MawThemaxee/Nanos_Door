@@ -22,14 +22,14 @@ function BaseDoor.SpawnFromList(specs)
     for index, spec in ipairs(specs or {}) do
         local builder = builders[spec.type]
         if not builder then
-            Console.Warn(string.format("[door] map door #%d: unknown type '%s', skipped", index, tostring(spec.type)))
+            Console.Warn("[door] map door #%d: unknown type '%s', skipped", index, tostring(spec.type))
         else
             local door = builder(spec)
             local mode = spec.mode or DoorEvents.INTERACTION_MODE.TRIGGER
             if not BaseDoor.GetInteractionModeDefinition(mode) then
                 -- The package registering it must load before this one
                 -- (list it in packages_requirements).
-                Console.Warn(string.format("[door] map door #%d: unknown interaction mode '%s', using trigger", index, tostring(mode)))
+                Console.Warn("[door] map door #%d: unknown interaction mode '%s', using trigger", index, tostring(mode))
                 mode = DoorEvents.INTERACTION_MODE.TRIGGER
             end
             door:SetInteractionMode(mode)

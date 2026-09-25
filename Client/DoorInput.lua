@@ -4,25 +4,9 @@ local DoorEvents = Package.Require("DoorEvents.lua")
 -- so the client finds what the player is looking at and asks the server to
 -- act on it (Server/DoorInteraction.lua validates and toggles the door).
 
--- Reuses an interact binding that already exists (from the game or another
--- package) so players keep a single "interact" key; a binding with no
--- mapped keys doesn't exist. Falls back to registering our own.
-local function ResolveInteractBinding()
-    for _, binding_name in ipairs(DoorEvents.INTERACT_GLOBAL_BINDINGS) do
-        local keys = Input.GetMappedKeys(binding_name)
-        if keys and #keys > 0 then
-            return binding_name
-        end
-    end
-
-    Input.Register(DoorEvents.INTERACT_BINDING, DoorEvents.INTERACT_DEFAULT_KEY, "Open / close a door")
-    return DoorEvents.INTERACT_BINDING
-end
-
-local interact_binding = ResolveInteractBinding()
-Console.Log("[door] interact binding: " .. interact_binding)
-
-Input.Bind(interact_binding, InputEvent.Pressed, function()
+-- Hooks the game's own "Interact" binding (always registered by nanos
+-- world), so doors use the same key players already use to interact.
+Input.Bind(DoorEvents.INTERACT_BINDING, InputEvent.Pressed, function()
     local player = Client.GetLocalPlayer()
     if not player then return end
 

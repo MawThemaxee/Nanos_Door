@@ -25,12 +25,8 @@ local DoorEvents = {
     -- from a trace hit alone that it is looking at an interactable door.
     INTERACTION_MODE_KEY = "DoorInteractionMode",
     INTERACTABLE_KEY = "DoorInteractable",
-    -- Existing interact bindings (game or another package) to reuse, checked
-    -- in order; the first one with a mapped key wins. Only if none exists
-    -- does the door package register its own INTERACT_BINDING.
-    INTERACT_GLOBAL_BINDINGS = { "Interact" },
-    INTERACT_BINDING = "DoorInteract",
-    INTERACT_DEFAULT_KEY = "E",
+    -- The game's built-in interact binding (always registered by nanos world).
+    INTERACT_BINDING = "Interact",
     -- Client trace length from the camera (third-person camera sits behind
     -- the character, so this is longer than the server-side reach check).
     INTERACT_TRACE_DISTANCE = 500,

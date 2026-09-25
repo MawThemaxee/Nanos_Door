@@ -14,7 +14,15 @@ mesh/size/material, an interaction trigger, and a lock system — from Lua.
 
 ## Installation
 
-1. Place (or symlink) the `door` package folder into your server's `Packages/` directory.
+1. Clone this repository into your server's `Packages/` folder **as `door`** (the folder name is the
+   package name, and must be lowercase/kebab-case):
+
+   ```bash
+   cd <path-to-nanos-world-server>/Packages
+   git clone https://github.com/MawThemaxee/door.git door
+   ```
+
+   The repository root *is* the package, so `git pull` inside `Packages/door` updates it.
 2. Enable it in your server's `Config.toml`:
 
    ```toml

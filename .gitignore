@@ -13,3 +13,5 @@
 CLAUDE.md
 Nanos_Door.code-workspace
 Docs/
+# Release archives belong in GitHub Releases, not in the repo
+*.zip
